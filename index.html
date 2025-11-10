@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HotRest - Hotel & Restaurant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('hotel-bg.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    /* Header Section */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 50px;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #4fd1ff;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #4fd1ff;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .search-bar button {
+      padding: 6px 12px;
+      border: none;
+      background-color: #4fd1ff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90vh;
+      padding: 0 80px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      background: #004cff;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #006eff;
+    }
+
+    /* Login Box */
+    .login-box {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      background: white;
+      color: #002b5c;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-bottom: 1px solid white;
+      background: transparent;
+      color: white;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #a9dbf8;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-box p {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .login-box a {
+      color: #a1d4ff;
+      text-decoration: none;
+    }
+
+    .login-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">HotRest</div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">ABOUT</a>
+      <a href="#">DESIGN</a>
+      <a href="#">SERVICE</a>
+      <a href="#">CONTACT</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Type to Text">
+      <button>Search</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>HOTEL & RESTAURANT</h1>
+      <p>Stay, Dine, & Unwind<br>
+      Experience the perfect blend of comfort in every moment.<br>
+      At our HOTEL and RESTAURANT, every stay feels like home, and every meal is a memory.</p>
+      <button class="btn">BOOK NOW</button>
+    </div>
+
+    <div class="login-box">
+      <h2>LOG IN HERE</h2>
+      <input type="email" placeholder="Enter Email Here">
+      <input type="password" placeholder="Enter Password Here">
+      <button>LOG IN</button>
+      <p>Don't Have an Account? <a href="#">Sign Up Here</a></p>
+      <p>Log In With</p>
+    </div>
+  </section>
+
+</body>
+</html>
