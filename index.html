@@ -1,193 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HotRest - Hotel & Restaurant</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title> Hotel &amp; Restaurant</title>
+  <meta name="description" content="Hotel & Restaurant — comfortable rooms, fresh local food, and seaside views.">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: url('backg2.jpg') no-repeat center center/cover;
-      color: white;
-    }
+    :root{--accent:#0ea5a4;--dark:#0f172a;--muted:#050505;--bg:#f8fafc}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(1.jpeg);}
+    header{background:linear-gradient(90deg, rgba(2, 245, 95, 0.514), transparent);padding:18px 24px;position:sticky;top:0;backdrop-filter:blur(6px);z-index:20}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--dark);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#0de9de;padding:10px 14px;border-radius:10px;text-decoration:none}
+  
+    
+    .hero{max-width:1100px;margin:28px auto;padding:28px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero-card{background:rgba(96, 70, 247, 0.932);border-radius:14px;padding:28px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+    .hero h1{margin:0 0 12px;font-size:28px}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .book-card{background:linear-gradient(180deg, rgba(14,165,164,0.06), rgba(14,165,164,0.02));padding:18px;border-radius:12px}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    .field label{font-size:13px;color:var(--muted);margin-bottom:6px}
+    .field input,.field select{padding:10px;border-radius:8px;border:1px solid #0bd3f7}
+    .book-btn{background:var(--accent);color:#fdfafa;padding:10px;border-radius:8px;border:none;width:100%;font-weight:700}
 
-    /* Header Section */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px 50px;
-    }
+   
+    .section{max-width:1100px;margin:22px auto;padding:0 18px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .card h3{margin-top:0}
+    .muted{color:var(--muted)}
+    
+    footer{margin-top:28px;background:#013246;color:#fff;padding:28px 18px}
+    footer .row{max-width:1100px;margin:0 auto;display:flex;gap:20px;justify-content:space-between}
+    footer a{color:inherit;text-decoration:none}
 
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: #4fd1ff;
+  
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
     }
-
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #4fd1ff;
-    }
-
-    .search-bar {
-      display: flex;
-      gap: 5px;
-      align-items: center;
-    }
-
-    .search-bar input {
-      padding: 6px 10px;
-      border-radius: 4px;
-      border: none;
-    }
-
-    .search-bar button {
-      padding: 6px 12px;
-      border: none;
-      background-color: #4fd1ff;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 90vh;
-      padding: 0 80px;
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .hero-text {
-      max-width: 600px;
-    }
-
-    .hero-text h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .hero-text p {
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      padding: 12px 30px;
-      background: #004cff;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #006eff;
-    }
-
-    /* Login Box */
-    .login-box {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 30px;
-      border-radius: 10px;
-      width: 300px;
-    }
-
-    .login-box h2 {
-      text-align: center;
-      background: white;
-      color: #002b5c;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 20px;
-    }
-
-    .login-box input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-bottom: 1px solid white;
-      background: transparent;
-      color: white;
-    }
-
-    .login-box button {
-      width: 100%;
-      padding: 10px;
-      background: #a9dbf8;
-      color: black;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .login-box p {
-      font-size: 14px;
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .login-box a {
-      color: #a1d4ff;
-      text-decoration: none;
-    }
-
-    .login-box a:hover {
-      text-decoration: underline;
+    @media (max-width:600px){
+      nav ul{display:none}
+      header{padding:12px}
+      .brand .title{display:none}
+      .grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="logo">HotRest</div>
-    <nav>
-      <a href="#">HOME</a>
-      <a href="#">ABOUT</a>
-      <a href="#">DESIGN</a>
-      <a href="#">SERVICE</a>
-      <a href="#">CONTACT</a>
-    </nav>
-    <div class="search-bar">
-      <input type="text" placeholder="Type to Text">
-      <button>Search</button>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo">HR</div>
+        <div>
+          <div style="font-weight:700">Hotel &amp; Restaurant</div>
+          <div style="font-size:12px;color:var(--muted)">Seaside comfort · Local flavors</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#dining">Dining</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#book">Book Now</a>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>HOTEL & RESTAURANT</h1>
-      <p>Stay, Dine, & Unwind<br>
-      Experience the perfect blend of comfort in every moment.<br>
-      At our HOTEL and RESTAURANT, every stay feels like home, and every meal is a memory.</p>
-      <button class="btn">BOOK NOW</button>
-    </div>
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Welcome to Seabreeze Hotel &amp; Bistro</h1>
+        <p class="muted">Relax in our comfortable rooms with ocean views, enjoy locally-sourced meals prepared by our head chef, and explore nearby attractions.</p>
+        <div style="display:flex;gap:12px;margin-top:16px">
+          <div class="card" style="flex:1">
+            <h3>Why stay with us?</h3>
+            <ul class="muted">
+              <li>Beachfront location — steps to the sand.</li>
+              <li>Free breakfast &amp; Wi-Fi.</li>
+              <li>Family rooms and private balconies.</li>
+            </ul>
+          </div>
+          <div class="card" style="width:220px">
+            <h3>Special Offer</h3>
+            <p class="muted">Stay 3 nights, get 20% off dining at our bistro.</p>
+          </div>
+        </div>
+      </div>
 
-    <div class="login-box">
-      <h2>LOG IN HERE</h2>
-      <input type="email" placeholder="Enter Email Here">
-      <input type="password" placeholder="Enter Password Here">
-      <button>LOG IN</button>
-      <p>Don't Have an Account? <a href="#">Sign Up Here</a></p>
-      <p>Log In With</p>
-    </div>
-  </section>
+      <aside class="book-card" id="book">
+        <h3 style="margin-top:0">Quick Reservation</h3>
+        <form onsubmit="event.preventDefault();alert('Thanks! Reservation request sent.');">
+          <div class="field"><label>Check-in</label><input type="date" required></div>
+          <div class="field"><label>Check-out</label><input type="date" required></div>
+          <div class="field"><label>Guests</label><select><option>1</option><option>2</option><option>3</option><option>4+</option></select></div>
+          <button class="book-btn" type="submit">Request Booking</button>
+        </form>
+      </aside>
+    </section>
 
+  </main>
+
+  <footer>
+    <div class="row">
+      <div>
+        <div style="font-weight:700">Seabreeze Hotel &amp; Bistro</div>
+        <div class="muted" style="font-size:13px">© 2025 Seabreeze. All rights reserved.</div>
+      </div>
+      <div style="text-align:right">
+        <div class="muted">Follow us</div>
+        <div style="margin-top:8px"><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">Twitter</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+  </script>
 </body>
 </html>
-
